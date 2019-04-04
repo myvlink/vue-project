@@ -5,7 +5,6 @@
         <h1 class="text--secondary mb-3">Orders</h1>
         <v-list two-line subheader>
           <v-list-tile
-            
             v-for="order in orders"
             :key="order.id"
           >
@@ -13,10 +12,10 @@
               <v-checkbox
                 color="success"
                 :input-value="order.done"
-                @change="markDone(order)"
+                @click="markDone(order)"
               ></v-checkbox>
             </v-list-tile-action>
-            <v-list-tile-content @click="notifications = !notifications">
+            <v-list-tile-content>
               <v-list-tile-title>{{ order.name }}</v-list-tile-title>
               <v-list-tile-sub-title>{{ order.phone }}</v-list-tile-sub-title>
             </v-list-tile-content>

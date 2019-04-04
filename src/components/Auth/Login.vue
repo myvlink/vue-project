@@ -11,24 +11,23 @@
                     ref="form"
                     v-model="valid"
                     validation>
-                <v-text-field
-                    prepend-icon="person"
-                    name="email"
-                    label="Email"
-                    type="email"
-                    v-model="email"
-                    :rules="emailRules"
-                ></v-text-field>
-                <v-text-field
-                    prepend-icon="lock"
-                    name="password"
-                    label="Password"
-                    type="password"
-                    :counter="6"
-                    v-model="password"
-                    :rules="passwordRules"
-
-                ></v-text-field>
+                  <v-text-field
+                      prepend-icon="person"
+                      name="email"
+                      label="Email"
+                      type="email"
+                      v-model="email"
+                      :rules="emailRules"
+                  ></v-text-field>
+                  <v-text-field
+                      prepend-icon="lock"
+                      name="password"
+                      label="Password"
+                      type="password"
+                      :counter="6"
+                      v-model="password"
+                      :rules="passwordRules"
+                  ></v-text-field>
                 </v-form>
             </v-card-text>
             <v-card-actions>

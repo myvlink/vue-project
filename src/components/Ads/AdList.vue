@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs12>
+            <v-flex xs12 sm6 offset-sm3>
                 <h1>Ad List</h1>
             </v-flex>
         </v-layout>
@@ -15,3 +15,6 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+</style>
