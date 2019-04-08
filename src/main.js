@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Vuetify from 'vuetify'
+import * as fb from 'firebase'
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
@@ -13,5 +14,15 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created () {
+    fb.initializeApp({
+      apiKey: 'AIzaSyAy8kjQDJPycilIvOL5cW2UWSS9JdL055A',
+      authDomain: 'vue-project-e566a.firebaseapp.com',
+      databaseURL: 'https://vue-project-e566a.firebaseio.com',
+      projectId: 'vue-project-e566a',
+      storageBucket: 'vue-project-e566a.appspot.com',
+      messagingSenderId: '493828172485'
+    })
+  }
 })
