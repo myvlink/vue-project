@@ -20,6 +20,7 @@ export default new Router({
         },
         {
             path: '/ad/:id',
+            props: true,
             name: 'Ad',
             component: Ad
         },
