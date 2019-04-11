@@ -3,7 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Vuetify from 'vuetify'
-import * as fb from 'firebase'
+import fb from 'firebase/app'
+import 'firebase/app'
+// import 'firebase/auth'
+
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
@@ -24,11 +27,13 @@ new Vue({
       storageBucket: 'vue-project-e566a.appspot.com',
       messagingSenderId: '493828172485'
     })
-
+    
     fb.auth().onAuthStateChanged(user => {
       if (user) {
         this.$store.dispatch('autoLoginUser', user)
       }
     })
+
+    this.$store.dispatch('fetchAds')
   }
 })

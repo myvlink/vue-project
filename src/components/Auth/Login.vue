@@ -84,7 +84,7 @@ export default {
     },
     created () {
       if (this.$route.query['loginError']) {
-        this.$store.dispatch('setError', 'Please log in')
+        this.$store.dispatch('setError', 'Please log in to access this page')
       }
     }
 }
