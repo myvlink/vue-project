@@ -10,7 +10,7 @@
                             :src="ad.imageSrc"
                         >
                             <div class="car-link">
-                                <v-btn class="error" :to="'/ad/' + ad.id">{{ ad.title }}</v-btn>
+                                <v-btn class="" :to="'/ad/' + ad.id">{{ ad.title }}</v-btn>
                             </div>
                         </v-carousel-item>
                     </v-carousel>
@@ -40,8 +40,8 @@
 
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn flat :to="'/ad/' + ad.id">Open</v-btn>
-                            <v-btn raised class="primary">Buy</v-btn>
+                            <v-btn flat :to="'/ad/' + ad.id" class="mr-2">Open</v-btn>
+                            <app-buy-modal :ad="ad"></app-buy-modal>
                         </v-card-actions>
                     </v-card>
                 </v-flex>
@@ -51,12 +51,12 @@
     <div v-else>
       <v-layout row>
         <v-flex xs12 class="text-xs-center pt-5">
-              <v-progress-circular
-                :size="100"
-                :width="7"
-                color="primary"
-                indeterminate
-              ></v-progress-circular>
+          <v-progress-circular
+            :size="100"
+            :width="7"
+            color="primary"
+            indeterminate
+          ></v-progress-circular>
         </v-flex>
       </v-layout>
     </div>
@@ -79,15 +79,15 @@ export default {
 </script>
 
 <style scoped>
-    .car-link {
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        background: rgba(0, 0, 0, 0.5);
-        transform: translateX(-50%);
-        padding: 5px 15px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-    }
+  .car-link {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      transform: translateX(-50%);
+      padding: 5px 15px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+  }
 </style>
 

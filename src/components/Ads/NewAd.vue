@@ -50,7 +50,7 @@
                 <v-layout row>
                   <v-flex xs12>
                     <v-switch
-                    color="primary"
+                      color="primary"
                       v-model="promo"
                       label="Add to promo?"
                     ></v-switch>

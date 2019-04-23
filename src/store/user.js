@@ -1,5 +1,3 @@
-// import * as fb from 'firebase'
-
 import fb from 'firebase/app'
 import 'firebase/app'
 import 'firebase/auth'
@@ -26,7 +24,7 @@ export default {
 
       try {
         const user = await fb.auth().createUserWithEmailAndPassword(email, password)
-        commit('setUser', new User(user.uid))
+        commit('setUser', new User(user.user.uid))
         commit('setLoading', false)
       } catch (error) {
         commit('setLoading', false)
@@ -61,6 +59,11 @@ export default {
     },
     isUserLoggedIn (state) {
       return state.user !== null
-    }
+    },
+    // isUserLoggedIn () {
+    //   fb.auth().onAuthStateChanged((user) => {
+    //     return user
+    //   })
+    // }
   }
 }
